@@ -1,0 +1,659 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Stock Quote AAPL Apple Inc.</title>
+<meta name="description" content="Stock screener for investors and traders, financial visualizations.">
+<meta name="keywords" content="Stock Screener, Charts, Quotes, Maps, News, Financial Visualizations, Research, Trading Systems">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<link href="//fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet" type="text/css"><link rel="stylesheet" href="/finviz.css?rev=85" type="text/css">
+<link rel="icon" type="image/png" href="/favicon_2x.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicon.png" sizes="16x16">
+<script src="/script/boxover.js?rev=2" type="text/javascript"></script>
+<script src="/script/lightup.js?rev=1" type="text/javascript"></script>
+<script type="text/javascript">FinvizSettings = {hasUserPremium: false, name: ""};</script><script type="text/javascript" src="/js/libs/shims.min.js?rev=1"></script><script type="text/javascript" src="/js/libs/d3-json.js"></script><script src="/script/ajax.js" type="text/javascript"></script>
+<script src="/script/quote.js?rev=9" type="text/javascript"></script>
+<script src="/script/ta_settings.js?rev=3" type="text/javascript"></script>
+</head>
+<body onload="StocktwitsInit();SetSearchExt('&ty=c&ta=1&p=d');" style="margin:0" bgcolor="#ffffff">
+<div id="unsupported-browser">Your browser is no longer supported. Please, <a href="http://whatbrowser.org/" target="_blank">upgrade your browser.</a></div>
+                <table class="header" width="100%" cellpadding="0" cellspacing="0" border="0" style="min-width: 1000px">
+                    <tr valign="top">
+                        <td>
+                            <script type="text/javascript">if(document.body.clientWidth>1500){document.write('<table align="center" width="1425px" cellpadding="0" cellspacing="0" border="0" style="table-layout: fixed; min-width: 1000px">')}else{document.write('<table align="center" width="95%" style="max-width: 1425px; min-width: 1000px; table-layout: fixed" cellpadding="0" cellspacing="0" border="0">')}</script>
+                                <tr>
+                                    <td width="30%">
+                                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td height="50" valign="middle">
+                                                    <a href="/" class="logo"></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="search" id="search" style="padding-top: 4px">
+                                                    <form style="margin: 0">
+                                                        <input placeholder="Search ticker, company or profile" type="text" value="">
+                                                        <span class="fa fa-search"></span>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td valign="bottom" style="padding-bottom: 4px">
+                                        <div id="microbar_position" style="height: 31px"></div>
+                                    </td>
+                                    <td width="728" align="right" style="position:relative;"><div id="banner_position" style="position:absolute;right:0;top:0;overflow:hidden;height:96px"></div></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="1000" style="font-size:0">
+                            <img src="/gfx/nic2x2.gif" width="1000" height="1" border="0">
+                        </td>
+                    </tr>
+                </table>
+            <table class="navbar" width="100%" height="30" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td height="30">
+                        <script type="text/javascript">if(document.body.clientWidth>1500){document.write('<table align="center" width="1425px" cellpadding="0" cellspacing="0" border="0" style="white-space: nowrap; min-width: 1000px">')}else{document.write('<table align="center" width="95%" style="max-width:1425px;white-space: nowrap;min-width: 1000px" cellpadding="0" cellspacing="0" border="0">')}</script>
+                            <tr height="30"><td><a class="nav-link  is-first" href="/">Home</a></td><td><a class="nav-link " href="/news.ashx">News</a></td><td><a class="nav-link " href="/screener.ashx">Screener</a></td><td><a class="nav-link " href="/map.ashx">Maps</a></td><td><a class="nav-link " href="/groups.ashx">Groups</a></td><td><a class="nav-link " href="/portfolio.ashx">Portfolio</a></td><td><a class="nav-link " href="/insidertrading.ashx">Insider</a></td><td><a class="nav-link " href="/futures.ashx">Futures</a></td><td><a class="nav-link " href="/forex.ashx">Forex</a></td><td><a class="nav-link " href="/backtests.ashx">Backtests</a></td><td><a class="nav-link  is-elite" href="/elite.ashx">Elite</a></td><td style="width: 100%"></td>
+                                <td class="time" id="time"></td>
+                <td>
+                    <a href="/help/screener.ashx" class="nav-link is-help">
+                        <span class="fa fa-question-circle"></span>
+                        Help
+                    </a>
+                </td>
+                <td><a href="/login.ashx" class="nav-link sign-in">Login</a></td>
+                <td><a href="/register.ashx" class="nav-link sign-up">Register</a></td>
+            
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        <script type="text/javascript">if(document.body.clientWidth>1500){document.write('<table align="center" width="1425px" cellpadding="0" cellspacing="0" border="0">')}else{document.write('<table align="center" width="95%" style="max-width:1425px;" cellpadding="0" cellspacing="0" border="0">')}</script>
+<tr>
+<td>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td><img src="/gfx/nic2x2.gif" width="2" height="7" alt="" border="0"></td></tr>
+<tr><td width="100%"><img src="/gfx/nic2x2.gif" width="2" height="15" alt="" border="0"></td></tr>
+<tr>
+                <td width="100%">
+                    <div id="quote-ad" style="background: #fffce5; border: 1px solid #fee500; color: #363a46; display: none; font-family: Lato; font-size: 13px; line-height: 36px; text-align: center; width: 945px; margin: -10px auto 10px auto;position: relative;">
+                        <b>TIP: </b>
+                        <a href="/elite.ashx?utm_source=finviz&utm_medium=banner&utm_campaign=quote" target="blank" onclick="ga('send', 'event', 'bannerQuote', 'click')" style="color: #1E6DC0;">Upgrade to FINVIZ*Elite</a> to get real-time quotes, intraday charts, and advanced charting tools.
+                        <a title="Close" class="close" onclick="Finviz.quoteAd.close();" href="javascript:void(0)" style="
+                            position: absolute;
+                            margin-right: 0;
+                            right: 10px;
+                            color: #363a46;
+                            text-decoration: none;
+	                    ">×</a>
+                    </div>
+                    <script src="/js/quote_a.js" async></script>
+                </td>
+            </tr>
+        <tr valign="bottom"><td align="center">
+<table  cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td class="fullview-links" align="left" valign="center">
+<a href="javascript:Publish('t=AAPL&ty=c&ta=1&p=d&s=l')" class="tab-link">publish chart</a> | <a href="/save_to_portfolio.ashx?t=AAPL" class="tab-link">save to portfolio</a> | <a href="/create_alert.ashx?t=AAPL" class="tab-link">create alert</a>&nbsp;<img src="/gfx/nic2x2.gif" width="20" height="14" border="0" alt=""><span class="count-text"><b>Type:</b></span> <a href="quote.ashx?t=AAPL&ty=c&ta=0&p=d" class="tab-link">candle</a> | <a href="quote.ashx?t=AAPL&ty=l&ta=0&p=d" class="tab-link">line</a> | <a href="quote.ashx?t=AAPL&ty=c&ta=1&p=d" class="tab-link"><b>advanced</b></a> | <a href="/elite.ashx" class="tab-link">interactive</a> | <a href="/elite.ashx" class="tab-link">perf</a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="count-text"><b>Timeframe:</b></span> <a href="elite.ashx" class="tab-link">intraday</a> | </span><a href="quote.ashx?t=AAPL&ty=c&ta=1&p=d" class="tab-link"><b>daily</b></a> | <a href="quote.ashx?t=AAPL&ty=c&ta=0&p=w" class="tab-link">weekly</a> | <a href="quote.ashx?t=AAPL&ty=c&ta=0&p=m" class="tab-link">monthly</a>&nbsp;&nbsp;</td><td align="left" valign="top" class="ta-settings-button"><a href="elite.ashx" class="ta-settings-button">Settings<img src="gfx/ta_settings_arrow_d.gif" width="21" height="9" alt="" border="0"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td width="100%"><img src="gfx/nic2x2.gif" width="2" height="16" alt="" border="0"></td></tr>
+<tr>
+<td>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="center" valign="top">
+<img id="chart0" src="chart.ashx?t=AAPL&ty=c&ta=1&p=d&s=l" alt="AAPL Apple Inc. daily Stock Chart" height="340" border="0"/>
+</td>
+</tr>
+<tr>
+<td align="center" valign="top">
+<table width="100%" cellpadding="3" cellspacing="0" bgcolor="#ffffff" class="fullview-title">
+<tr><td align="center"><a href="quote.ashx?t=AAPL&ty=c&ta=1&p=d" class="fullview-ticker" id="ticker">AAPL</a> <span class="body-table">[NASD]</span></td></tr>
+<tr><td align="center"><a href="http://www.apple.com" target="_blank" class="tab-link"><b>Apple Inc.</b></a></td></tr>
+<tr><td align="center" class="fullview-links"><a href="screener.ashx?v=111&f=sec_consumergoods" class="tab-link">Consumer Goods</a> | <a href="screener.ashx?v=111&f=ind_electronicequipment" class="tab-link">Electronic Equipment</a> | <a href="screener.ashx?v=111&f=geo_usa" class="tab-link">USA</a></td></tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" cellpding="0" cellspacing="0" class="fullview-links">
+<td align="left" width="80%">
+</td>
+<td align="right" width="20%">
+<a target="_blank" class="tab-link" href="http://www.reuters.com/finance/stocks/financialHighlights?symbol=AAPL">financial highlights</a> | <a target="_blank" class="tab-link" href="http://www.google.com/finance?q=NASDAQ:AAPL&fstype=ii">statements</a></td>
+</tr>
+</table>
+</tr>
+</td>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="snapshot-table2">
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Major index membership] offsetx=[10] offsety=[20] delay=[300]">Index</td><td width="8%" class="snapshot-td2" align="left"><b><small>DJIA S&P500</small></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Price-to-Earnings (ttm)] offsetx=[10] offsety=[20] delay=[300]">P/E</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">13.74</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Diluted EPS (ttm)] offsetx=[10] offsety=[20] delay=[300]">EPS (ttm)</td><td width="8%" class="snapshot-td2" align="left"><b>8.56</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Insider ownership] offsetx=[10] offsety=[20] delay=[300]">Insider Own</td><td width="8%" class="snapshot-td2" align="left"><b>0.10%</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Shares outstanding] offsetx=[10] offsety=[20] delay=[300]">Shs Outstand</td><td width="8%" class="snapshot-td2" align="left"><b>5.41B</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Performance (Week)] offsetx=[10] offsety=[20] delay=[300]">Perf Week</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">0.09%</span></b></td>
+</tr>
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Market capitalization] offsetx=[10] offsety=[20] delay=[300]">Market Cap</td><td width="8%" class="snapshot-td2" align="left"><b>636.45B</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Forward Price-to-Earnings (next fiscal year)] offsetx=[10] offsety=[20] delay=[300]">Forward P/E</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">13.09</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[EPS estimate for next year] offsetx=[10] offsety=[20] delay=[300]">EPS next Y</td><td width="8%" class="snapshot-td2" align="left"><b>8.99</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Insider transactions (6-Month change in Insider Ownership)] offsetx=[10] offsety=[20] delay=[300]">Insider Trans</td><td width="8%" class="snapshot-td2" align="left"><b>-19.03%</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Shares float] offsetx=[10] offsety=[20] delay=[300]">Shs Float</td><td width="8%" class="snapshot-td2" align="left"><b>5.38B</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Performance (Month)] offsetx=[10] offsety=[20] delay=[300]">Perf Month</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">4.38%</span></b></td>
+</tr>
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Income (ttm)] offsetx=[10] offsety=[20] delay=[300]">Income</td><td width="8%" class="snapshot-td2" align="left"><b>47.80B</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Price-to-Earnings-to-Growth] offsetx=[10] offsety=[20] delay=[300]">PEG</td><td width="8%" class="snapshot-td2" align="left"><b>1.75</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[EPS estimate for next quarter] offsetx=[10] offsety=[20] delay=[300]">EPS next Q</td><td width="8%" class="snapshot-td2" align="left"><b>1.65</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Institutional ownership] offsetx=[10] offsety=[20] delay=[300]">Inst Own</td><td width="8%" class="snapshot-td2" align="left"><b>57.90%</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Short interest share] offsetx=[10] offsety=[20] delay=[300]">Short Float</td><td width="8%" class="snapshot-td2" align="left"><b>1.02%</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Performance (Quarter)] offsetx=[10] offsety=[20] delay=[300]">Perf Quarter</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">22.36%</span></b></td>
+</tr>
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Revenue (ttm)] offsetx=[10] offsety=[20] delay=[300]">Sales</td><td width="8%" class="snapshot-td2" align="left"><b>220.29B</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Price-to-Sales (ttm)] offsetx=[10] offsety=[20] delay=[300]">P/S</td><td width="8%" class="snapshot-td2" align="left"><b>2.89</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[EPS growth this year] offsetx=[10] offsety=[20] delay=[300]">EPS this Y</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">42.80%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Institutional transactions (3-Month change in Institutional Ownership)] offsetx=[10] offsety=[20] delay=[300]">Inst Trans</td><td width="8%" class="snapshot-td2" align="left"><b>-0.17%</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Short interest ratio] offsetx=[10] offsety=[20] delay=[300]">Short Ratio</td><td width="8%" class="snapshot-td2" align="left"><b>1.52</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Performance (Half Year)] offsetx=[10] offsety=[20] delay=[300]">Perf Half Y</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">14.05%</span></b></td>
+</tr>
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Book value per share (mrq)] offsetx=[10] offsety=[20] delay=[300]">Book/sh</td><td width="8%" class="snapshot-td2" align="left"><b>23.25</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Price-to-Book (mrq)] offsetx=[10] offsety=[20] delay=[300]">P/B</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#aa0000;">5.06</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[EPS growth next year] offsetx=[10] offsety=[20] delay=[300]">EPS next Y</td><td width="8%" class="snapshot-td2" align="left"><b>8.67%</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Return on Assets (ttm)] offsetx=[10] offsety=[20] delay=[300]">ROA</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">16.00%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Analysts' mean target price] offsetx=[10] offsety=[20] delay=[300]">Target Price</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">128.32</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Performance (Year)] offsetx=[10] offsety=[20] delay=[300]">Perf Year</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">0.91%</span></b></td>
+</tr>
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Cash per share (mrq)] offsetx=[10] offsety=[20] delay=[300]">Cash/sh</td><td width="8%" class="snapshot-td2" align="left"><b>11.42</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Price to cash per share (mrq)] offsetx=[10] offsety=[20] delay=[300]">P/C</td><td width="8%" class="snapshot-td2" align="left"><b>10.31</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Long term annual growth estimate (5 years)] offsetx=[10] offsety=[20] delay=[300]">EPS next 5Y</td><td width="8%" class="snapshot-td2" align="left"><b>7.83%</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Return on Equity (ttm)] offsetx=[10] offsety=[20] delay=[300]">ROE</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">37.90%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[52-Week trading range] offsetx=[10] offsety=[20] delay=[300]">52W Range</td><td width="8%" class="snapshot-td2" align="left"><b><small>88.99 - 121.23</small></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Performance (Year To Date)] offsetx=[10] offsety=[20] delay=[300]">Perf YTD</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">13.67%</span></b></td>
+</tr>
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Dividend (annual)] offsetx=[10] offsety=[20] delay=[300]">Dividend</td><td width="8%" class="snapshot-td2" align="left"><b>2.28</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Price to Free Cash Flow (ttm)] offsetx=[10] offsety=[20] delay=[300]">P/FCF</td><td width="8%" class="snapshot-td2" align="left"><b>16.76</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Annual EPS growth past 5 years] offsetx=[10] offsety=[20] delay=[300]">EPS past 5Y</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">33.60%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Return on Investment (ttm)] offsetx=[10] offsety=[20] delay=[300]">ROI</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">28.30%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Distance from 52-Week High] offsetx=[10] offsety=[20] delay=[300]">52W High</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#aa0000;">-2.95%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Beta] offsetx=[10] offsety=[20] delay=[300]">Beta</td><td width="8%" class="snapshot-td2" align="left"><b>1.33</b></td>
+</tr>
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Dividend yield (annual)] offsetx=[10] offsety=[20] delay=[300]">Dividend %</td><td width="8%" class="snapshot-td2" align="left"><b>1.94%</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Quick Ratio (mrq)] offsetx=[10] offsety=[20] delay=[300]">Quick Ratio</td><td width="8%" class="snapshot-td2" align="left"><b>1.30</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Annual sales growth past 5 years] offsetx=[10] offsety=[20] delay=[300]">Sales past 5Y</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">29.10%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Gross Margin (ttm)] offsetx=[10] offsety=[20] delay=[300]">Gross Margin</td><td width="8%" class="snapshot-td2" align="left"><b>39.50%</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Distance from 52-Week Low] offsetx=[10] offsety=[20] delay=[300]">52W Low</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">32.21%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Average True Range (14)] offsetx=[10] offsety=[20] delay=[300]">ATR</td><td width="8%" class="snapshot-td2" align="left"><b>1.64</b></td>
+</tr>
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Full time employees] offsetx=[10] offsety=[20] delay=[300]">Employees</td><td width="8%" class="snapshot-td2" align="left"><b>110000</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Current Ratio (mrq)] offsetx=[10] offsety=[20] delay=[300]">Current Ratio</td><td width="8%" class="snapshot-td2" align="left"><b>1.30</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Quarterly revenue growth (yoy)] offsetx=[10] offsety=[20] delay=[300]">Sales Q/Q</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#aa0000;">-14.60%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Operating Margin (ttm)] offsetx=[10] offsety=[20] delay=[300]">Oper. Margin</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">28.50%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Relative Strength Index] offsetx=[10] offsety=[20] delay=[300]">RSI (14)</td><td width="8%" class="snapshot-td2" align="left"><b>65.74</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Volatility (Week, Month)] offsetx=[10] offsety=[20] delay=[300]">Volatility</td><td width="8%" class="snapshot-td2" align="left"><b><small>1.24% 1.24%</small></b></td>
+</tr>
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Stock has options trading on a market exchange] offsetx=[10] offsety=[20] delay=[300]">Optionable</td><td width="8%" class="snapshot-td2" align="left"><b>Yes</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Total Debt to Equity (mrq)] offsetx=[10] offsety=[20] delay=[300]">Debt/Eq</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#aa0000;">0.67</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Quarterly earnings growth (yoy)] offsetx=[10] offsety=[20] delay=[300]">EPS Q/Q</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#aa0000;">-23.00%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Net Profit Margin (ttm)] offsetx=[10] offsety=[20] delay=[300]">Profit Margin</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">21.70%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Relative volume] offsetx=[10] offsety=[20] delay=[300]">Rel Volume</td><td width="8%" class="snapshot-td2" align="left"><b>0.65</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Previous close] offsetx=[10] offsety=[20] delay=[300]">Prev Close</td><td width="8%" class="snapshot-td2" align="left"><b>116.60</b></td>
+</tr>
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Stock available to sell short] offsetx=[10] offsety=[20] delay=[300]">Shortable</td><td width="8%" class="snapshot-td2" align="left"><b>Yes</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Long Term Debt to Equity (mrq)] offsetx=[10] offsety=[20] delay=[300]">LT Debt/Eq</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#aa0000;">0.54</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Earnings date<br><br>BMO = Before Market Open<br>AMC = After Market Close] offsetx=[10] offsety=[20] delay=[300]">Earnings</td><td width="8%" class="snapshot-td2" align="left"><b>Oct 25 AMC</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Dividend Payout Ratio (ttm)] offsetx=[10] offsety=[20] delay=[300]">Payout</td><td width="8%" class="snapshot-td2" align="left"><b>24.70%</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Average volume (3 month)] offsetx=[10] offsety=[20] delay=[300]">Avg Volume</td><td width="8%" class="snapshot-td2" align="left"><b>35.88M</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Current stock price] offsetx=[10] offsety=[20] delay=[300]">Price</td><td width="8%" class="snapshot-td2" align="left"><b>117.65</b></td>
+</tr>
+<tr class="table-dark-row">
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Analysts' mean recommendation (1=Buy 5=Sell)] offsetx=[10] offsety=[20] delay=[300]">Recom</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">1.90</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Distance from 20-Day Simple Moving Average] offsetx=[10] offsety=[20] delay=[300]">SMA20</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">2.23%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Distance from 50-Day Simple Moving Average] offsetx=[10] offsety=[20] delay=[300]">SMA50</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">5.46%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Distance from 200-Day Simple Moving Average] offsetx=[10] offsety=[20] delay=[300]">SMA200</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">15.28%</span></b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Volume] offsetx=[10] offsety=[20] delay=[300]">Volume</td><td width="8%" class="snapshot-td2" align="left"><b>23,322,858</b></td>
+<td width="7%" class="snapshot-td2-cp" align="left" title="cssbody=[tooltip_short_bdy] cssheader=[tooltip_short_hdr] body=[Performance (today)] offsetx=[10] offsety=[20] delay=[300]">Change</td><td width="8%" class="snapshot-td2" align="left"><b><span style="color:#008800;">0.90%</span></b></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td><img src="gfx/nic2x2.gif" width="685" height="10"></td></tr>
+<tr><td align="center"><script src='//ads.investingchannel.com/adtags/finviz/quotepages/970x91.js?pc=xb&' type='text/javascript' charset='utf-8'></script></td></tr><tr><td><img src="gfx/nic2x2.gif" width="685" height="10"></td></tr>
+<tr>
+<td>
+<table width="100%" class="fullview-ratings-outer" cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Oct-21-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Cowen</td>
+<td width="250" align="left">Outperform</td>
+<td width="150" align="left">$125 &rarr; $135</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Oct-18-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Stifel</td>
+<td width="250" align="left">Buy</td>
+<td width="150" align="left">$120 &rarr; $130</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Oct-18-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Deutsche Bank</td>
+<td width="250" align="left">Hold</td>
+<td width="150" align="left">$105 &rarr; $108</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Oct-13-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Pacific Crest</td>
+<td width="250" align="left">Overweight</td>
+<td width="150" align="left">$121 &rarr; $129</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Oct-12-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Mizuho</td>
+<td width="250" align="left">Buy</td>
+<td width="150" align="left">$120 &rarr; $130</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Sep-30-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Citigroup</td>
+<td width="250" align="left">Buy</td>
+<td width="150" align="left">$120 &rarr; $130</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Sep-22-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">RBC Capital Mkts</td>
+<td width="250" align="left">Outperform</td>
+<td width="150" align="left">$120 &rarr; $125</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Sep-22-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Nomura</td>
+<td width="250" align="left">Buy</td>
+<td width="150" align="left">$120 &rarr; $135</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Sep-20-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">UBS</td>
+<td width="250" align="left">Buy</td>
+<td width="150" align="left">$115 &rarr; $127</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Sep-16-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Canaccord Genuity</td>
+<td width="250" align="left">Buy</td>
+<td width="150" align="left">$120 &rarr; $140</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Sep-15-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">BTIG Research</td>
+<td width="250" align="left">Buy</td>
+<td width="150" align="left">$124 &rarr; $133</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-downgrade"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-downgrade"><td width="120" align="left">Sep-08-16</td><td width="200" align="left"><b>Downgrade</b></td>
+<td width="250" align="left">Wells Fargo</td>
+<td width="250" align="left">Outperform &rarr; Market Perform</td>
+<td width="150" align="left"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Aug-11-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">RBC Capital Mkts</td>
+<td width="250" align="left">Outperform</td>
+<td width="150" align="left">$115 &rarr; $117</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-upgrade"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-upgrade"><td width="120" align="left">Jul-28-16</td><td width="200" align="left"><b>Upgrade</b></td>
+<td width="250" align="left">Hilliard Lyons</td>
+<td width="250" align="left">Long-term Buy &rarr; Buy</td>
+<td width="150" align="left"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-upgrade"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-upgrade"><td width="120" align="left">Jul-27-16</td><td width="200" align="left"><b>Upgrade</b></td>
+<td width="250" align="left">Raymond James</td>
+<td width="250" align="left">Mkt Perform &rarr; Outperform</td>
+<td width="150" align="left"></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Jul-27-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Macquarie</td>
+<td width="250" align="left">Outperform</td>
+<td width="150" align="left">$112 &rarr; $115</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Jul-25-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Maxim Group</td>
+<td width="250" align="left">Buy</td>
+<td width="150" align="left">$157 &rarr; $168</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Jul-15-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Barclays</td>
+<td width="250" align="left">Overweight</td>
+<td width="150" align="left">$121 &rarr; $115</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Jul-06-16</td><td width="200" align="left"><b>Initiated</b></td>
+<td width="250" align="left">Longbow</td>
+<td width="250" align="left">Buy</td>
+<td width="150" align="left">$125</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="body-table-rating-neutral"><td class="fullview-ratings-inner"><table cellpadding="0" cellspacing="0" border="0">
+<tr class="body-table-rating-neutral"><td width="120" align="left">Jun-23-16</td><td width="200" align="left"><b>Reiterated</b></td>
+<td width="250" align="left">Canaccord Genuity</td>
+<td width="250" align="left">Buy</td>
+<td width="150" align="left">$130 &rarr; $120</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td><img src="gfx/nic2x2.gif" width="685" height="10"></td></tr>
+<tr>
+<td>
+<table width="100%" cellpadding="0" cellspacing="0"><tr><td><table width="100%" cellpadding="1" cellspacing="0" border="0" id="news-table" class="fullview-news-outer">
+<tr><td width="130" align="right" style="white-space:nowrap">Oct-24-16 04:46PM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=12vl3tmm0/*https://www.thestreet.com/story/13864378/1/apple-s-ipod-celebrates-15-years-and-counting.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">Apple's iPod Celebrates 15 Years and Counting</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">04:37PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.investors.com/news/technology/click/apple-analysts-place-final-bets-before-earnings-window-closes/" target="_blank" class="tab-link-news">Apple Analysts Place Final Bets Before Earnings Window Closes</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">04:30PM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/tumblr/blog-3-things-to-watch-when-apple-reports-quarterly-203033762.html" target="_blank" class="tab-link-news">3 Things to Watch When Apple Reports Quarterly Earnings</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">04:25PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.investors.com/research/investing-action-plan/apple-gm-lockheed-headline-key-earnings-tuesday-investing-action-plan/" target="_blank" class="tab-link-news">Apple, GM, Lockheed Headline Key Earnings Tuesday: Investing Action Plan</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">04:06PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.investors.com/news/technology/click/apple-watch-tanks-garmin-surges-in-smartwatches/" target="_blank" class="tab-link-news">Apple Watch Tanks, Garmin Surges In Smartwatches</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">04:00PM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/tech-stocks-briefing-com-210024234.html" target="_blank" class="tab-link-news">Tech Stocks from Briefing.com</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">03:43PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.cnbc.com/id/104043076?__source=yahoo|finance|headline|headline|story&par=yahoo&doc=104043076" target="_blank" class="tab-link-news">Apple's iPhone sales may fall for a third-straight quarter. Here's what it means</a> <span style="color:#aa6dc0;font-size:9px">at CNBC</span></td></tr>
+<tr><td width="130" align="right">03:05PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.cnbc.com/id/104043911?__source=yahoo|finance|headline|headline|story&par=yahoo&doc=104043911" target="_blank" class="tab-link-news">Beware the tech titans, says top technician</a> <span style="color:#aa6dc0;font-size:9px">at CNBC</span></td></tr>
+<tr><td width="130" align="right">03:04PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.wsj.com/articles/apple-gets-polished-ahead-of-results-1477333228?mod=yahoo_hs" target="_blank" class="tab-link-news">[$$] Apple Gets Polished Ahead of Results</a> <span style="color:#aa6dc0;font-size:9px">at The Wall Street Journal</span></td></tr>
+<tr><td width="130" align="right">03:01PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.marketwatch.com/News/Story/Story.aspx?guid=6FFA2672-9A11-11E6-964A-5F0FB4514AF7&siteid=yhoof2" target="_blank" class="tab-link-news">Goldman Sachs just cut its S&amp;P 500 earnings outlook for 2016 and 2017</a> <span style="color:#aa6dc0;font-size:9px">at MarketWatch</span></td></tr>
+<tr><td width="130" align="right">02:51PM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/video/list-tech-earnings-deck-185100656.html" target="_blank" class="tab-link-news">A-list tech earnings on deck</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">02:44PM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=1336a0469/*https://www.thestreet.com/story/13864405/1/what-to-expect-when-apple-aapl-reports-q4-results.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">What to Expect When Apple (AAPL) Reports Q4 Results</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">02:40PM&nbsp;&nbsp;</td><td align="left"><a href="http://qz.com/817864/the-galaxy-note-7-fiasco-isnt-just-bad-for-samsung-ssnlf-it-could-be-bad-for-koreas-stock-market/?utm_source=YPL" target="_blank" class="tab-link-news">The Galaxy Note 7 fiasco isnt bad news just for Samsung, its bad for the whole Korean stock market</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">02:38PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.marketwatch.com/News/Story/Story.aspx?guid=F7D895CF-3725-42C3-9E91-C4855CD1C556&siteid=yhoof2" target="_blank" class="tab-link-news">AT&amp;T-Time Warner: Far From a Done Deal</a> <span style="color:#aa6dc0;font-size:9px">at MarketWatch</span></td></tr>
+<tr><td width="130" align="right">02:30PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.forbes.com/sites/gordonkelly/2016/10/24/google-pixel-vs-pixel-xl-review-should-you-upgrade/?utm_source=yahoo&utm_medium=partner&utm_campaign=yahootix&partner=yahootix" target="_blank" class="tab-link-news">Pixel Vs Pixel XL Review: Should You Upgrade?</a> <span style="color:#aa6dc0;font-size:9px">at Forbes</span></td></tr>
+<tr><td width="130" align="right">02:17PM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/blurring-effect-comes-iphone-7-174340687.html" target="_blank" class="tab-link-news">Blurring effect comes to iPhone 7 Plus with software update</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">01:48PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.forbes.com/sites/greatspeculations/2016/10/24/key-trends-to-watch-as-apple-reports-q4-earnings/?utm_source=yahoo&utm_medium=partner&utm_campaign=yahootix&partner=yahootix" target="_blank" class="tab-link-news">Key Trends To Watch As Apple Reports Q4 Earnings</a> <span style="color:#aa6dc0;font-size:9px">at Forbes</span></td></tr>
+<tr><td width="130" align="right">01:42PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.fool.com/investing/2016/10/24/can-samsung-recover-from-the-galaxy-note-7-disaste.aspx?source=yahoo-2-news&utm_campaign=article&utm_medium=feed&utm_source=yahoo-2-news" target="_blank" class="tab-link-news">Can Samsung Recover From the Galaxy Note 7 Disaster?</a> <span style="color:#aa6dc0;font-size:9px">at Motley Fool</span></td></tr>
+<tr><td width="130" align="right">01:21PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.wsj.com/articles/paypal-gets-friendlier-with-facebook-1477328499?mod=yahoo_hs" target="_blank" class="tab-link-news">[$$] PayPal Gets Friendlier With Facebook</a> <span style="color:#aa6dc0;font-size:9px">at The Wall Street Journal</span></td></tr>
+<tr><td width="130" align="right">01:02PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.marketwatch.com/News/Story/Story.aspx?guid=252945C3-E11C-4B7F-B215-3389ED1EC1EF&siteid=yhoof2" target="_blank" class="tab-link-news">Apple Watch sales tumble 70% as global smartwatch market contracts</a> <span style="color:#aa6dc0;font-size:9px">at MarketWatch</span></td></tr>
+<tr><td width="130" align="right">12:59PM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/portrait-mode-iphone-7-plus-165926185.html" target="_blank" class="tab-link-news">The new Portrait mode for the iPhone 7 Plus camera is available now</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">12:45PM&nbsp;&nbsp;</td><td align="left"><a href="http://qz.com/817214/what-apple-aapl-will-be-announcing-at-its-october-27-macbook-event-and-how-to-watch-it/?utm_source=YPL" target="_blank" class="tab-link-news">What to expect at Apples big Mac event</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">12:40PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.marketwatch.com/News/Story/Story.aspx?guid=140287C4-9A02-11E6-B03C-850A74A73CC6&siteid=yhoof2" target="_blank" class="tab-link-news">Apple sales likely to fall again despite Samsung woes</a> <span style="color:#aa6dc0;font-size:9px">at MarketWatch</span></td></tr>
+<tr><td width="130" align="right">12:31PM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/apples-stock-still-worth-retaining-163133564.html" target="_blank" class="tab-link-news">Apple's Stock Is Still Worth Retaining</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">12:10PM&nbsp;&nbsp;</td><td align="left"><a href="http://247wallst.com/consumer-electronics/2016/10/24/can-apple-sell-50-million-iphones-2/" target="_blank" class="tab-link-news">Can Apple Sell 50 Million iPhones?</a> <span style="color:#aa6dc0;font-size:9px">at 24/7 Wall St.</span></td></tr>
+<tr><td width="130" align="right">12:09PM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=1369i2sq0/*https://www.thestreet.com/story/13864161/1/jim-cramer-look-at-t-mobile-sprint-for-read-on-apple.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">Jim Cramer -- Look at T-Mobile, Sprint for Read on Apple</a> <span style="color:#aa6dc0;font-size:9px">at TheStreet</span></td></tr>
+<tr><td width="130" align="right">11:59AM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=13fnv8ueg/*https://www.thestreet.com/story/13864159/1/will-apple-aapl-stock-be-hurt-by-negative-idc-smartwatch-data.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">Will Apple (AAPL) Stock Be Hurt by Negative IDC Smartwatch Data?</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">11:52AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/t-time-warner-deal-could-143648472.html" target="_blank" class="tab-link-news">The AT&amp;T-Time Warner deal is a blow to companies like Apple that want slimmer TV packages</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">11:52AM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=13l39k07v/*https://www.thestreet.com/story/13864148/1/apple-aapl-q4-earnings-due-out-tomorrow-what-analysts-are-expecting.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">Apple (AAPL) Q4 Earnings Due Out Tomorrow, What Analysts Are Expecting</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">11:51AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.investopedia.com/news/how-apple-pay-might-save-apple-corp-aapl-pypl/?partner=YahooSA" target="_blank" class="tab-link-news">How Apple Pay Might Save Apple Corp</a> <span style="color:#aa6dc0;font-size:9px">at Investopedia</span></td></tr>
+<tr><td width="130" align="right">11:30AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.insidermonkey.com/blog/prominent-tech-stocks-dominate-beech-hills-portfolio-482816/" target="_blank" class="tab-link-news">Prominent Tech Stocks Dominate Beech Hills Portfolio</a> <span style="color:#aa6dc0;font-size:9px">at Insider Monkey</span></td></tr>
+<tr><td width="130" align="right">11:20AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/winter-coming-pok-mon-literally-152000359.html" target="_blank" class="tab-link-news">Winter Is Coming For 'Pokémon GO,' Literally</a> <span style="color:#aa6dc0;font-size:9px">Forbes</span></td></tr>
+<tr><td width="130" align="right">11:20AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.forbes.com/sites/insertcoin/2016/10/24/winter-is-coming-for-pokemon-go-literally/?utm_source=yahoo&utm_medium=partner&utm_campaign=yahootix&partner=yahootix" target="_blank" class="tab-link-news">Winter Is Coming For 'Pokémon GO,' Literally</a> <span style="color:#aa6dc0;font-size:9px">at Forbes</span></td></tr>
+<tr><td width="130" align="right">11:13AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/video/tim-cook-keep-bulls-happy-151300333.html" target="_blank" class="tab-link-news">Can Tim Cook keep the bulls happy?</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">11:05AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/buy-apple-etfs-earnings-150503140.html" target="_blank" class="tab-link-news">Should You Buy Apple ETFs Before Its Earnings?</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">10:59AM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=132mgkcdt/*https://www.thestreet.com/story/13861150/1/how-tesla-is-winning-the-autonomous-vehicle-race.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">How Tesla Is Winning the Autonomous Vehicle Race</a> <span style="color:#aa6dc0;font-size:9px">at TheStreet</span></td></tr>
+<tr><td width="130" align="right">10:53AM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=144r7mmvp/*https://www.thestreet.com/story/13863929/1/time-warner-twx-didn-t-talk-to-apple-aapl-about-a-merger-ceo-jeffrey-bewkes-claims.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">Time Warner (TWX) Didn't Talk to Apple (AAPL) About a Merger, CEO Jeffrey Bewkes Claims</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">10:43AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.bizjournals.com/sanjose/news/2016/10/24/apple-expected-to-report-first-annual-revenue.html?ana=yahoo" target="_blank" class="tab-link-news">Apple expected to report first annual revenue decline in more than a decade</a> <span style="color:#aa6dc0;font-size:9px">at bizjournals.com</span></td></tr>
+<tr><td width="130" align="right">10:12AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.investopedia.com/stock-analysis/cotd/102416/apple-price-levels-watch-after-earnings-aapl-aapl.aspx?partner=YahooSA" target="_blank" class="tab-link-news">Apple Price Levels to Watch After Earnings (AAPL)</a> <span style="color:#aa6dc0;font-size:9px">at Investopedia</span></td></tr>
+<tr><td width="130" align="right">10:03AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/technology-stock-earnings-oct-25-140302215.html" target="_blank" class="tab-link-news">Technology Stock Earnings on Oct 25: AAPL, AKAM, LOGI, NCR</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">09:58AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/apple-watch-sales-freefall-135834261.html" target="_blank" class="tab-link-news">Apple Watch sales are in freefall</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">09:46AM&nbsp;&nbsp;</td><td align="left"><a href="http://blogs.barrons.com/techtraderdaily/2016/10/24/apple-samsung-see-q3-smartwatch-sales-plummet-awaiting-new-product-says-idc/?mod=yahoobarrons&ru=yahoo" target="_blank" class="tab-link-news">Apple, Samsung See Q3 Smartwatch Sales Plummet Awaiting New Product, Says IDC</a> <span style="color:#aa6dc0;font-size:9px">at Barrons.com</span></td></tr>
+<tr><td width="130" align="right">09:30AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/ford-united-american-apple-part-133001088.html" target="_blank" class="tab-link-news">Ford, United, American and Apple are part of Zacks Earnings Preview</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">09:30AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/casella-waste-solutions-blackhawk-network-133001552.html" target="_blank" class="tab-link-news">Casella Waste Solutions, Blackhawk Network Solutions, Apple, Cadence Design Systems and MicroStrategy highlighted as Zacks Bull and Bear of the Day</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">09:17AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/tumblr/blog-this-credit-card-company-is-sending-a-strong-buy-131705489.html" target="_blank" class="tab-link-news">This Credit Card Company is Sending a Strong Buy Signal</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">09:00AM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=13j641tcd/*https://www.thestreet.com/story/13863057/1/apple-s-upcoming-mac-event-is-more-important-than-you-might-think.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">Apple's Upcoming Mac Event is More Important Than You Might Think</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">08:51AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/apple-release-macbooks-week-heres-125150926.html" target="_blank" class="tab-link-news">Apple will release new MacBooks this week  here's a very good guess what they'll be</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">08:30AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.insidermonkey.com/blog/5-stocks-that-could-make-huge-earnings-moves-this-week-482780/" target="_blank" class="tab-link-news">5 Stocks That Could Make Huge Earnings Moves This Week</a> <span style="color:#aa6dc0;font-size:9px">at Insider Monkey</span></td></tr>
+<tr><td width="130" align="right">08:30AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/apple-watch-nike-perfect-running-123000944.html" target="_blank" class="tab-link-news">Apple Watch Nike+, The Perfect Running Partner, Arrives Friday, October 28</a> <span style="color:#aa6dc0;font-size:9px">Business Wire</span></td></tr>
+<tr><td width="130" align="right">08:30AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.fool.com/investing/2016/10/24/1-reason-apple-incs-a10-is-ridiculously-impressive.aspx?source=yahoo-2-news&utm_campaign=article&utm_medium=feed&utm_source=yahoo-2-news" target="_blank" class="tab-link-news">1 Reason Apple Inc.'s A10 Is Ridiculously Impressive</a> <span style="color:#aa6dc0;font-size:9px">at Motley Fool</span></td></tr>
+<tr><td width="130" align="right">08:00AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.bloomberg.com/view/articles/2016-10-24/apple-has-designs-on-stifling-innovation?cmpid=yhoo.headline" target="_blank" class="tab-link-news">Apple Has Designs on Stifling Innovation</a> <span style="color:#aa6dc0;font-size:9px">at Bloomberg</span></td></tr>
+<tr><td width="130" align="right">07:15AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.marketwatch.com/News/Story/Story.aspx?guid=C3D39B34-9557-11E6-A4A8-04BAD7D151EC&siteid=yhoof2" target="_blank" class="tab-link-news">Netflix joins ranks of U.S. tech companies admitting they cant conquer China</a> <span style="color:#aa6dc0;font-size:9px">at MarketWatch</span></td></tr>
+<tr><td width="130" align="right">07:02AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/video/galloway-apple-could-screw-t-110229573.html" target="_blank" class="tab-link-news">Galloway: Apple Could Screw Up AT&amp;T-Time Warner</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">07:02AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.bloomberg.com/news/videos/2016-10-24/galloway-apple-could-screw-up-at-t-time-warner?cmpid=yhoo.headline" target="_blank" class="tab-link-news">Galloway: Apple Could Screw Up AT&amp;T-Time Warner</a> <span style="color:#aa6dc0;font-size:9px">at Bloomberg</span></td></tr>
+<tr><td width="130" align="right">06:37AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.marketwatch.com/News/Story/Story.aspx?guid=8C30AB60-97D0-11E6-BAD1-3738EC6AFBC3&siteid=yhoof2" target="_blank" class="tab-link-news">These 5 services promise to block robocalls  do they deliver?</a> <span style="color:#aa6dc0;font-size:9px">at MarketWatch</span></td></tr>
+<tr><td width="130" align="right">05:15AM&nbsp;&nbsp;</td><td align="left"><a href="http://qz.com/816174/what-to-expect-from-apples-fourth-quarter-earnings-tomorrow/?utm_source=YPL" target="_blank" class="tab-link-news">What to expect from Apples fourth-quarter earnings tomorrow</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">03:40AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.investopedia.com/news/time-warner-cable-and-att-deal-betrays-apples-content-ambitions-aapl-twc/?partner=YahooSA" target="_blank" class="tab-link-news">Time Warner Cable and AT&amp;T Deal Betrays Apple's Content Ambitions (AAPL, TWC)</a> <span style="color:#aa6dc0;font-size:9px">at Investopedia</span></td></tr>
+<tr><td width="130" align="right">12:18AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.wsj.com/articles/microsoft-peers-stage-rebound-1477265673?ru=yahoo?mod=yahoo_itp" target="_blank" class="tab-link-news">[$$] Microsoft, Peers Stage Rebound</a> <span style="color:#aa6dc0;font-size:9px">at The Wall Street Journal</span></td></tr>
+<tr><td width="130" align="right">12:16AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.wsj.com/articles/the-fatal-mistake-that-doomed-samsungs-galaxy-note-1477248978?ru=yahoo?mod=yahoo_itp" target="_blank" class="tab-link-news">The Fatal Mistake That Doomed Samsungs Galaxy Note</a> <span style="color:#aa6dc0;font-size:9px">at The Wall Street Journal</span></td></tr>
+<tr><td width="130" align="right" style="white-space:nowrap">Oct-23-16 07:01PM&nbsp;&nbsp;</td><td align="left"><a href="http://au.finance.yahoo.com/news/smartphones-become-health-research-tools-230113539.html" target="_blank" class="tab-link-news">Smartphones become health research tools</a> <span style="color:#aa6dc0;font-size:9px">AAP</span></td></tr>
+<tr><td width="130" align="right">07:01PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.forbes.com/sites/ewanspence/2016/10/23/microsoft-surface-book-success-continues/?utm_source=yahoo&utm_medium=partner&utm_campaign=yahootix&partner=yahootix" target="_blank" class="tab-link-news">Forget MacBook Pro Competition, Microsoft's Surface Is Already A Success</a> <span style="color:#aa6dc0;font-size:9px">at Forbes</span></td></tr>
+<tr><td width="130" align="right">06:49PM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/microsoft-windows-die-224900969.html" target="_blank" class="tab-link-news">For Microsoft Windows, it's do or die</a> <span style="color:#aa6dc0;font-size:9px">Business Insider</span></td></tr>
+<tr><td width="130" align="right">05:20PM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=13atisfg7/*https://www.thestreet.com/story/13859652/1/google-s-new-pixel-phones-are-shaping-up-to-be-a-big-hit.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">Google's New Pixel Phones Are Shaping Up to Be a Big Hit</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">03:23PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.wsj.com/articles/the-fatal-mistake-that-doomed-samsungs-galaxy-note-1477248978?mod=yahoo_hs" target="_blank" class="tab-link-news">The Fatal Mistake That Doomed Samsung's Galaxy Note 7</a> <span style="color:#aa6dc0;font-size:9px">at The Wall Street Journal</span></td></tr>
+<tr><td width="130" align="right">02:46PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.fool.com/investing/2016/10/23/surprise-apple-inc-is-losing-market-share-in-china.aspx?source=yahoo-2-news&utm_campaign=article&utm_medium=feed&utm_source=yahoo-2-news" target="_blank" class="tab-link-news">Surprise! Apple Inc. Is Losing Market Share in China</a> <span style="color:#aa6dc0;font-size:9px">at Motley Fool</span></td></tr>
+<tr><td width="130" align="right">02:15PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.fool.com/investing/2016/10/23/samsungs-galaxy-note-7-debacle-could-hurt-best-buy.aspx?source=yahoo-2-news&utm_campaign=article&utm_medium=feed&utm_source=yahoo-2-news" target="_blank" class="tab-link-news">Samsung's Galaxy Note 7 Debacle Could Hurt Best Buy's Momentum</a> <span style="color:#aa6dc0;font-size:9px">at Motley Fool</span></td></tr>
+<tr><td width="130" align="right">12:02PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.thestreet.com/video/13862852/what-to-watch-this-week-apple-earnings-third-quarter-gdp.html?puc=yahoov&cm_ven=YAHOOV" target="_blank" class="tab-link-news">What to Watch This Week: Apple Earnings, Third Quarter GDP</a> <span style="color:#aa6dc0;font-size:9px">at TheStreet</span></td></tr>
+<tr><td width="130" align="right">11:40AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.fool.com/investing/2016/10/23/goodbye-project-titan-apples-car-ambitions-fade.aspx?source=yahoo-2-news&utm_campaign=article&utm_medium=feed&utm_source=yahoo-2-news" target="_blank" class="tab-link-news">Goodbye, Project Titan: Apple's Car Ambitions Fade</a> <span style="color:#aa6dc0;font-size:9px">at Motley Fool</span></td></tr>
+<tr><td width="130" align="right">11:19AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/tumblr/blog-its-all-about-positive-earnings-leverage-151935881.html" target="_blank" class="tab-link-news">Its All About Positive Earnings Leverage</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">10:45AM&nbsp;&nbsp;</td><td align="left"><a href="http://247wallst.com/industrials/2016/10/23/top-dow-stocks-reporting-earnings-this-week/" target="_blank" class="tab-link-news">Top Dow Stocks Reporting Earnings This Week</a> <span style="color:#aa6dc0;font-size:9px">at 24/7 Wall St.</span></td></tr>
+<tr><td width="130" align="right">09:46AM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=13tfilnla/*https://www.thestreet.com/story/13862648/1/week-ahead-earnings-season-enters-week-three-with-apple-and-alphabet-on-tap.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">Week Ahead: Earnings Season Enters Week Three With Apple and Alphabet on Tap</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">09:00AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/meet-first-guy-steve-jobs-130000349.html" target="_blank" class="tab-link-news">Meet the first guy Steve Jobs ever fired at Apple ... and he wasn't even an employee</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">08:44AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.ft.com/cms/s/061960fe-9540-11e6-a80e-bcd69f323a8b,s01=1.html?ftcamp=traffic/partner/feed_headline/us_yahoo/auddev" target="_blank" class="tab-link-news">[$$] The FT looks ahead to the week's main events</a> <span style="color:#aa6dc0;font-size:9px">at Financial Times</span></td></tr>
+<tr><td width="130" align="right">06:38AM&nbsp;&nbsp;</td><td align="left"><a href="http://247wallst.com/apps-software/2016/10/23/china-downloads-more-apple-apps-than-u-s/" target="_blank" class="tab-link-news">China Downloads More Apple Apps Than U.S.</a> <span style="color:#aa6dc0;font-size:9px">at 24/7 Wall St.</span></td></tr>
+<tr><td width="130" align="right">05:32AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.forbes.com/sites/parmyolson/2016/10/23/att-time-warner-takeover-netflix-apple/?utm_source=yahoo&utm_medium=partner&utm_campaign=yahootix&partner=yahootix" target="_blank" class="tab-link-news">AT&amp;T Goes From 'Dumb Pipe' To Media Giant With $85 Billion Time Warner Deal</a> <span style="color:#aa6dc0;font-size:9px">at Forbes</span></td></tr>
+<tr><td width="130" align="right">12:34AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.ft.com/cms/s/197b0590-972e-11e6-a80e-bcd69f323a8b,s01=1.html?ftcamp=traffic/partner/feed_headline/us_yahoo/auddev" target="_blank" class="tab-link-news">[$$] iPhone set for first annual sales fall ahead of Christmas rebound</a> <span style="color:#aa6dc0;font-size:9px">at Financial Times</span></td></tr>
+<tr><td width="130" align="right" style="white-space:nowrap">Oct-22-16 08:56PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.forbes.com/sites/ewanspence/2016/10/22/new-macbook-pro-details-leak/?utm_source=yahoo&utm_medium=partner&utm_campaign=yahootix&partner=yahootix" target="_blank" class="tab-link-news">New MacBook Pro Line-Up Leaks Ahead Of Official Launch</a> <span style="color:#aa6dc0;font-size:9px">at Forbes</span></td></tr>
+<tr><td width="130" align="right">06:00PM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/zombie-eu-tax-plan-haunts-220001511.html" target="_blank" class="tab-link-news">Zombie EU Tax Plan Haunts Ireland After Brexit: Brussels Beat</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">05:06PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.forbes.com/sites/ewanspence/2016/10/22/polar-m600preview-android-wear-fitness-smartwatch/?utm_source=yahoo&utm_medium=partner&utm_campaign=yahootix&partner=yahootix" target="_blank" class="tab-link-news">Polar M600 Review: When Your Fitness Answer Is Android</a> <span style="color:#aa6dc0;font-size:9px">at Forbes</span></td></tr>
+<tr><td width="130" align="right">03:45PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.bizjournals.com/losangeles/news/2016/10/22/att-agrees-to-buy-time-warner-for-80-billion.html?ana=yahoo" target="_blank" class="tab-link-news">AT&amp;T agrees to buy Time Warner for $80 billion</a> <span style="color:#aa6dc0;font-size:9px">at bizjournals.com</span></td></tr>
+<tr><td width="130" align="right">01:24PM&nbsp;&nbsp;</td><td align="left"><a href="http://au.finance.yahoo.com/news/silicon-valley-hillary-clinton-172458079.html" target="_blank" class="tab-link-news">Silicon Valley all-in for Hillary Clinton</a> <span style="color:#aa6dc0;font-size:9px">AFP</span></td></tr>
+<tr><td width="130" align="right">09:46AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.forbes.com/sites/insertcoin/2016/10/22/what-would-a-pokemon-go-halloween-event-look-like/?utm_source=yahoo&utm_medium=partner&utm_campaign=yahootix&partner=yahootix" target="_blank" class="tab-link-news">What Would A 'Pokemon GO' Halloween Event Look Like?</a> <span style="color:#aa6dc0;font-size:9px">at Forbes</span></td></tr>
+<tr><td width="130" align="right">09:30AM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/google-embarrassed-apple-133000202.html" target="_blank" class="tab-link-news">How Google embarrassed Apple</a> <span style="color:#aa6dc0;font-size:9px">Business Insider</span></td></tr>
+<tr><td width="130" align="right">09:15AM&nbsp;&nbsp;</td><td align="left"><a href="http://247wallst.com/media/2016/10/22/rupert-murdoch-apple-on-short-list-of-potential-time-warner-buyers/" target="_blank" class="tab-link-news">Rupert Murdoch, Apple on Short List of Potential Time Warner Buyers</a> <span style="color:#aa6dc0;font-size:9px">at 24/7 Wall St.</span></td></tr>
+<tr><td width="130" align="right">09:07AM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=13ve9anbl/*https://www.thestreet.com/story/13859874/1/apple-s-china-deals-will-create-opportunities-for-its-self-driving-technology.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">Apple's China Deals Will Create Opportunities for Its Self-Driving Technology</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">08:00AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.marketwatch.com/News/Story/Story.aspx?guid=7CBA99D6-97C9-11E6-8F1D-BF313838A245&siteid=yhoof2" target="_blank" class="tab-link-news">Stock market looks to Apple, Google earnings for jolt</a> <span style="color:#aa6dc0;font-size:9px">at MarketWatch</span></td></tr>
+<tr><td width="130" align="right">12:12AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.wsj.com/articles/at-t-time-warner-talks-could-set-off-deal-frenzy-1477081862?ru=yahoo?mod=yahoo_itp" target="_blank" class="tab-link-news">[$$] Apple Approached Time Warner About Possible Merger Before AT&amp;T Talks</a> <span style="color:#aa6dc0;font-size:9px">at The Wall Street Journal</span></td></tr>
+<tr><td width="130" align="right">12:10AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.wsj.com/articles/at-t-is-in-advanced-talks-to-acquire-time-warner-1477061850?ru=yahoo?mod=yahoo_itp" target="_blank" class="tab-link-news">[$$] AT&amp;T Is in Advanced Talks to Acquire Time Warner</a> <span style="color:#aa6dc0;font-size:9px">at The Wall Street Journal</span></td></tr>
+<tr><td width="130" align="right">12:10AM&nbsp;&nbsp;</td><td align="left"><a href="http://www.wsj.com/articles/lightning-earbuds-for-iphone-7-why-the-future-sounds-so-bright-1476993349?ru=yahoo?mod=yahoo_itp" target="_blank" class="tab-link-news">[$$] Lightning Earbuds for iPhone 7: Why the Future Sounds So Bright</a> <span style="color:#aa6dc0;font-size:9px">at The Wall Street Journal</span></td></tr>
+<tr><td width="130" align="right" style="white-space:nowrap">Oct-21-16 09:57PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.wsj.com/articles/at-t-is-in-advanced-talks-to-acquire-time-warner-1477061850?mod=yahoo_hs" target="_blank" class="tab-link-news">[$$] AT&amp;T Is in Advanced Talks to Acquire Time Warner</a> <span style="color:#aa6dc0;font-size:9px">at The Wall Street Journal</span></td></tr>
+<tr><td width="130" align="right">09:00PM&nbsp;&nbsp;</td><td align="left"><a href="http://us.rd.yahoo.com/finance/external/tsmfe/rss/SIG=12u63afm5/*https://www.thestreet.com/story/13863074/1/china-and-apple-dulovely-dupont-best-of-kass.html?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">China and Apple; DuLovely DuPont: Best of Kass</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">08:00PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.ft.com/cms/s/42882bb2-97aa-11e6-a80e-bcd69f323a8b,s01=1.html?ftcamp=traffic/partner/feed_headline/us_yahoo/auddev" target="_blank" class="tab-link-news">[$$] AT&amp;T nears deal to take over Time Warner</a> <span style="color:#aa6dc0;font-size:9px">at Financial Times</span></td></tr>
+<tr><td width="130" align="right">07:46PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.forbes.com/sites/ewanspence/2016/10/21/apple-headlines-macbook-pro-confirmed-slow-iphone-secret-chip/?utm_source=yahoo&utm_medium=partner&utm_campaign=yahootix&partner=yahootix" target="_blank" class="tab-link-news">Apple Loop: MacBook Pro Launch Confirmed, Anger At iPhone 7 Performance, Apple's Secret iPhone Chip</a> <span style="color:#aa6dc0;font-size:9px">at Forbes</span></td></tr>
+<tr><td width="130" align="right">07:27PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.forbes.com/sites/ewanspence/2016/10/21/android-news-headlines-pixel-xl-review-samsung-note-7-galaxy-s8/?utm_source=yahoo&utm_medium=partner&utm_campaign=yahootix&partner=yahootix" target="_blank" class="tab-link-news">Android Circuit: Pixel XL Review, New Galaxy S8 Leaks And Rumors, Challenging Google's Perfect Pixel</a> <span style="color:#aa6dc0;font-size:9px">at Forbes</span></td></tr>
+<tr><td width="130" align="right">07:01PM&nbsp;&nbsp;</td><td align="left"><a href="http://realmoney.thestreet.com/articles/10/21/2016/cramer-lam-research-and-skyworks-are-priced-too-conservatively?puc=yahoo&cm_ven=YAHOO" target="_blank" class="tab-link-news">Cramer: Lam Research and Skyworks Are Priced Too Conservatively</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">05:22PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.wsj.com/articles/at-t-time-warner-talks-could-set-off-deal-frenzy-1477081862?mod=yahoo_hs" target="_blank" class="tab-link-news">[$$] Apple Approached Time Warner About Possible Merger</a> <span style="color:#aa6dc0;font-size:9px">at The Wall Street Journal</span></td></tr>
+<tr><td width="130" align="right">05:04PM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/video/media-stocks-cheap-210400080.html" target="_blank" class="tab-link-news">Are media stocks cheap?</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+<tr><td width="130" align="right">05:00PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.insidermonkey.com/blog/android-vs-ios-2016-market-shares-divide-the-world-481929/" target="_blank" class="tab-link-news">Android vs iOS: 2016 Market Shares Divide the World</a> <span style="color:#aa6dc0;font-size:9px">at Insider Monkey</span></td></tr>
+<tr><td width="130" align="right">04:58PM&nbsp;&nbsp;</td><td align="left"><a href="http://www.marketwatch.com/News/Story/Story.aspx?guid=E0F67C3A-97CE-11E6-BD67-3DA024E8C0D2&siteid=yhoof2" target="_blank" class="tab-link-news">AT&amp;T-Time Warner talks could set off deal frenzy</a> <span style="color:#aa6dc0;font-size:9px">at MarketWatch</span></td></tr>
+<tr><td width="130" align="right">04:56PM&nbsp;&nbsp;</td><td align="left"><a href="http://finance.yahoo.com/news/david-rolfe-comments-apple-205632723.html" target="_blank" class="tab-link-news">David Rolfe Comments on Apple</a> <span style="color:#aa6dc0;font-size:9px"></span></td></tr>
+</table>
+</td><td width="300" valign="top" style="padding-left: 10px"><script src='//ads.investingchannel.com/adtags/finviz/quotepages/300x250.js' type='text/javascript' charset='utf-8'></script><div id="stocktwits-widget-news" class="fullview-news-outer"></div>
+                                  <script type="text/javascript" src="//stocktwits.com/addon/widget/2/widget-loader.min.js"></script>
+                                  <script type="text/javascript">
+                                    function StocktwitsInit() {
+                                        if(typeof STWT !== 'undefined') {
+                                            var quoteTicker = 'AAPL';
+                                            var height = document.getElementById('news-table').clientHeight - (FinvizSettings.hasUserPremium ? 0 : 250)
+                                            STWT.Widget({
+                                                container: 'stocktwits-widget-news',
+                                                symbol: quoteTicker,
+                                                width: '300',
+                                                height: height,
+                                                limit: '15',
+                                                scrollbars: 0,
+                                                header: 0,
+                                                streaming: 'true',
+                                                style: { link_color: '4871a8', link_hover_color: '4871a8', header_text_color: '000000', border_color: 'transparent', border_color_2: 'transparent', divider_color: 'd3d3d3', divider_type: 'solid', box_color: 'transparent', stream_color: 'transparent', text_color: '000000', time_color: '999999', font: 'Verdana, Arial, Tahoma', font_size: 11, time_font_size: 10, username_font: 'Verdana, Arial, Tahoma', username_size: 11 }
+                                            });
+                                        }
+                                    }
+                                  </script></td></tr></table></td>
+</tr>
+<tr><td><img src="gfx/nic2x2.gif" width="685" height="10"></td></tr>
+<tr class="table-light3-row">
+<td class="fullview-profile" align="left">Apple Inc. designs, manufactures, and markets mobile communication and media devices, personal computers, and portable digital music players to consumers, small and mid-sized businesses, education, and enterprise and government customers worldwide. The company also sells related software, services, accessories, networking solutions, and third-party digital content and applications. It offers iPhone, a line of smartphones; iPad, a line of multi-purpose tablets; and Mac, a line of desktop and portable personal computers. The company also provides iLife, a consumer-oriented digital lifestyle software application suite; iWork, an integrated productivity suite that helps users create, present, and publish documents, presentations, and spreadsheets; and other application software, such as Final Cut Pro, Logic Pro X, and FileMaker Pro. In addition, it offers Apple TV that connects to consumers' TV and enables them to access digital content directly for streaming high definition video, playing music and games, and viewing photos; Apple Watch, a personal electronic device; and iPod, a line of portable digital music and media players. Further, the company sells Apple-branded and third-party Mac-compatible, and iOS-compatible accessories, such as headphones, displays, storage devices, Beats products, and other connectivity and computing products and supplies. Additionally, it offers iCloud, a cloud service; AppleCare that offers support options for its customers; and Apple Pay, a mobile payment service. The company sells and delivers digital content and applications through the iTunes Store, App Store, iBooks Store, Mac App Store, and Apple Music. It also sells its products through its retail and online stores, and direct sales force, as well as through third-party cellular network carriers, wholesalers, retailers, and value-added resellers. Apple Inc. was founded in 1977 and is headquartered in Cupertino, California.</td></tr>
+<tr><td><img src="gfx/nic2x2.gif" width="685" height="10"></td></tr>
+<tr>
+<td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%" class="body-table" bgcolor="#d3d3d3">
+<tr>
+<td class="table-top-w" align="left">Insider Trading</td>
+<td class="table-top-w" align="left">Relationship</td>
+<td class="table-top-w" align="left">Date</td>
+<td class="table-top-w" align="center">Transaction</td>
+<td class="table-top-w" align="right">Cost</td>
+<td class="table-top-w" align="right">#Shares</td>
+<td class="table-top-w" align="right">Value ($)</td>
+<td class="table-top-w" align="right">#Shares Total</td>
+<td class="table-top-w" align="center">SEC Form 4</td>
+</tr>
+<tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1496686&tc=7" class="tab-link">WILLIAMS JEFFREY E</td><td style="white-space:nowrap">COO</td><td>Oct 03</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">112.59</td><td align="right">43,769</td><td align="right">4,927,952</td><td align="right">3,079</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019941/xslF345X03/wf-form4_147562055033231.xml" class="tab-link">Oct 04 06:36 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1557203&tc=7" class="tab-link">Riccio Daniel J.</td><td style="white-space:nowrap">Senior Vice President</td><td>Sep 21</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">113.06</td><td align="right">22,381</td><td align="right">2,530,308</td><td align="right">44,762</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019757/xslF345X03/wf-form4_147467014510458.xml" class="tab-link">Sep 23 06:35 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Aug 31</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">106.19</td><td align="right">49,883</td><td align="right">5,297,076</td><td align="right">1,039,809</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019324/xslF345X03/wf-form4_147268268998840.xml" class="tab-link">Aug 31 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1557203&tc=7" class="tab-link">Riccio Daniel J.</td><td style="white-space:nowrap">Senior Vice President</td><td>Aug 30</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">105.95</td><td align="right">49,996</td><td align="right">5,297,076</td><td align="right">67,143</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019323/xslF345X03/wf-form4_147268262634629.xml" class="tab-link">Aug 31 06:30 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Aug 30</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">105.95</td><td align="right">110,000</td><td align="right">11,654,500</td><td align="right">1,089,692</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019324/xslF345X03/wf-form4_147268268998840.xml" class="tab-link">Aug 31 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Aug 29</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">106.84</td><td align="right">110,000</td><td align="right">11,752,015</td><td align="right">1,199,692</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019324/xslF345X03/wf-form4_147268268998840.xml" class="tab-link">Aug 31 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Aug 26</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">107.20</td><td align="right">110,000</td><td align="right">11,792,394</td><td align="right">1,309,692</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019269/xslF345X03/wf-form4_147224477588332.xml" class="tab-link">Aug 26 04:53 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Aug 25</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">107.25</td><td align="right">224,000</td><td align="right">24,023,460</td><td align="right">1,419,692</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019269/xslF345X03/wf-form4_147224477588332.xml" class="tab-link">Aug 26 04:53 PM</a></td></tr><tr class="insider-option-row" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-option-row'" valign="top"><td><a href="insidertrading.ashx?oc=1557203&tc=7" class="tab-link">Riccio Daniel J.</td><td style="white-space:nowrap">Senior Vice President</td><td>Aug 23</td><td style="white-space:nowrap" align="center">Option Exercise</td><td align="right">0.00</td><td align="right">175,000</td><td align="right">0</td><td align="right">202,612</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019247/xslF345X03/wf-form4_147216446949087.xml" class="tab-link">Aug 25 06:34 PM</a></td></tr><tr class="insider-option-row" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-option-row'" valign="top"><td><a href="insidertrading.ashx?oc=1258883&tc=7" class="tab-link">FEDERIGHI CRAIG</td><td style="white-space:nowrap">Senior Vice President</td><td>Aug 23</td><td style="white-space:nowrap" align="center">Option Exercise</td><td align="right">0.00</td><td align="right">175,000</td><td align="right">0</td><td align="right">552,186</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019246/xslF345X03/wf-form4_147216426172341.xml" class="tab-link">Aug 25 06:33 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1258883&tc=7" class="tab-link">FEDERIGHI CRAIG</td><td style="white-space:nowrap">Senior Vice President</td><td>Aug 17</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">109.15</td><td align="right">90,153</td><td align="right">9,840,200</td><td align="right">377,186</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019151/xslF345X03/wf-form4_147155955918611.xml" class="tab-link">Aug 18 06:32 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1513362&tc=7" class="tab-link">Maestri Luca</td><td style="white-space:nowrap">Senior Vice President, CFO</td><td>Aug 17</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">108.93</td><td align="right">11,021</td><td align="right">1,200,518</td><td align="right">422</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019150/xslF345X03/wf-form4_147155947423717.xml" class="tab-link">Aug 18 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1307786&tc=7" class="tab-link">SEWELL D BRUCE</td><td style="white-space:nowrap">SVP, Gen'l Counsel, Secretary</td><td>Aug 16</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">110.11</td><td align="right">24,000</td><td align="right">2,642,640</td><td align="right">192,024</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019152/xslF345X03/wf-form4_147155961339791.xml" class="tab-link">Aug 18 06:33 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1661960&tc=7" class="tab-link">Srouji Johny</td><td style="white-space:nowrap">Senior Vice President</td><td>Aug 15</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">109.00</td><td align="right">4,327</td><td align="right">471,643</td><td align="right">106,542</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019099/xslF345X03/wf-form4_147138668237470.xml" class="tab-link">Aug 16 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1661960&tc=7" class="tab-link">Srouji Johny</td><td style="white-space:nowrap">Senior Vice President</td><td>Aug 12</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">108.00</td><td align="right">5,500</td><td align="right">594,000</td><td align="right">110,869</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016019099/xslF345X03/wf-form4_147138668237470.xml" class="tab-link">Aug 16 06:31 PM</a></td></tr><tr class="insider-option-row" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-option-row'" valign="top"><td><a href="insidertrading.ashx?oc=1214128&tc=7" class="tab-link">LEVINSON ARTHUR D</td><td style="white-space:nowrap">Director</td><td>Aug 09</td><td style="white-space:nowrap" align="center">Option Exercise</td><td align="right">9.13</td><td align="right">70,000</td><td align="right">639,100</td><td align="right">1,203,283</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016018921/xslF345X03/wf-form4_147095468544061.xml" class="tab-link">Aug 11 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214128&tc=7" class="tab-link">LEVINSON ARTHUR D</td><td style="white-space:nowrap">Director</td><td>Aug 09</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">108.68</td><td align="right">70,000</td><td align="right">7,607,600</td><td align="right">1,133,283</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016018921/xslF345X03/wf-form4_147095468544061.xml" class="tab-link">Aug 11 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1307786&tc=7" class="tab-link">SEWELL D BRUCE</td><td style="white-space:nowrap">SVP, Gen'l Counsel, Secretary</td><td>Aug 05</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">107.49</td><td align="right">23,305</td><td align="right">2,505,054</td><td align="right">216,024</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016018832/xslF345X03/wf-form4_147078185707166.xml" class="tab-link">Aug 09 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1631982&tc=7" class="tab-link">KONDO CHRIS</td><td style="white-space:nowrap">Principal Accounting Officer</td><td>Aug 02</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">104.87</td><td align="right">9,829</td><td align="right">1,030,767</td><td align="right">6,347</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016018636/xslF345X03/wf-form4_147043633400483.xml" class="tab-link">Aug 05 06:32 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1196612&tc=7" class="tab-link">AHRENDTS ANGELA J</td><td style="white-space:nowrap">Senior Vice President</td><td>Jul 19</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">100.00</td><td align="right">10,797</td><td align="right">1,079,700</td><td align="right">95,042</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016017677/xslF345X03/wf-form4_146905391104938.xml" class="tab-link">Jul 20 06:32 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1196612&tc=7" class="tab-link">AHRENDTS ANGELA J</td><td style="white-space:nowrap">Senior Vice President</td><td>Jul 18</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">100.00</td><td align="right">25,000</td><td align="right">2,500,000</td><td align="right">105,839</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000162828016017677/xslF345X03/wf-form4_146905391104938.xml" class="tab-link">Jul 20 06:32 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1196612&tc=7" class="tab-link">AHRENDTS ANGELA J</td><td style="white-space:nowrap">Senior Vice President</td><td>May 31</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">100.00</td><td align="right">25,000</td><td align="right">2,500,000</td><td align="right">97,971</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116125278/xslF345X03/doc4.xml" class="tab-link">Jun 02 06:30 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1557203&tc=7" class="tab-link">Riccio Daniel J.</td><td style="white-space:nowrap">Senior Vice President</td><td>May 27</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">100.00</td><td align="right">40,755</td><td align="right">4,075,500</td><td align="right">27,612</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116124774/xslF345X03/doc4.xml" class="tab-link">Jun 01 06:32 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1528884&tc=7" class="tab-link">Cue Eduardo H</td><td style="white-space:nowrap">Senior Vice President</td><td>May 27</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">99.44</td><td align="right">50,000</td><td align="right">4,972,000</td><td align="right">24,000</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116124771/xslF345X03/doc4.xml" class="tab-link">Jun 01 06:30 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1196612&tc=7" class="tab-link">AHRENDTS ANGELA J</td><td style="white-space:nowrap">Senior Vice President</td><td>May 27</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">100.00</td><td align="right">25,000</td><td align="right">2,500,000</td><td align="right">122,971</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116124453/xslF345X03/doc4.xml" class="tab-link">May 31 06:32 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1661960&tc=7" class="tab-link">Srouji Johny</td><td style="white-space:nowrap">Senior Vice President</td><td>May 26</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">99.75</td><td align="right">8,000</td><td align="right">798,000</td><td align="right">116,460</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116124457/xslF345X03/doc4.xml" class="tab-link">May 31 06:33 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1196612&tc=7" class="tab-link">AHRENDTS ANGELA J</td><td style="white-space:nowrap">Senior Vice President</td><td>May 26</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">100.00</td><td align="right">25,000</td><td align="right">2,500,000</td><td align="right">147,971</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116124453/xslF345X03/doc4.xml" class="tab-link">May 31 06:32 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1307786&tc=7" class="tab-link">SEWELL D BRUCE</td><td style="white-space:nowrap">SVP, Gen'l Counsel, Secretary</td><td>May 23</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">96.78</td><td align="right">103,300</td><td align="right">9,997,374</td><td align="right">239,432</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116123335/xslF345X03/doc4.xml" class="tab-link">May 25 06:32 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1496686&tc=7" class="tab-link">WILLIAMS JEFFREY E</td><td style="white-space:nowrap">COO</td><td>Apr 04</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">111.43</td><td align="right">26,284</td><td align="right">2,928,826</td><td align="right">3,079</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116113272/xslF345X03/doc4.xml" class="tab-link">Apr 05 06:33 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214110&tc=7" class="tab-link">SCHILLER PHILIP W</td><td style="white-space:nowrap">Senior Vice President</td><td>Apr 04</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">111.68</td><td align="right">26,284</td><td align="right">2,935,397</td><td align="right">49,575</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116113269/xslF345X03/doc4.xml" class="tab-link">Apr 05 06:32 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214110&tc=7" class="tab-link">SCHILLER PHILIP W</td><td style="white-space:nowrap">Senior Vice President</td><td>Mar 30</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">110.01</td><td align="right">268,644</td><td align="right">29,553,526</td><td align="right">49,575</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116111818/xslF345X03/doc4.xml" class="tab-link">Apr 01 06:33 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1496686&tc=7" class="tab-link">WILLIAMS JEFFREY E</td><td style="white-space:nowrap">COO</td><td>Mar 22</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">106.91</td><td align="right">268,644</td><td align="right">28,720,730</td><td align="right">3,079</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116110273/xslF345X03/doc4.xml" class="tab-link">Mar 23 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1513362&tc=7" class="tab-link">Maestri Luca</td><td style="white-space:nowrap">Senior Vice President, CFO</td><td>Mar 15</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">103.92</td><td align="right">18,241</td><td align="right">1,895,605</td><td align="right">421</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116109249/xslF345X03/doc4.xml" class="tab-link">Mar 17 06:30 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214128&tc=7" class="tab-link">LEVINSON ARTHUR D</td><td style="white-space:nowrap">Director</td><td>Feb 02</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">95.47</td><td align="right">2,008</td><td align="right">191,704</td><td align="right">1,133,283</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919116095500/xslF345X03/doc4.xml" class="tab-link">Feb 03 06:34 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Nov 09</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">120.81</td><td align="right">10,000</td><td align="right">1,208,100</td><td align="right">1,039,598</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919115079403/xslF345X03/doc4.xml" class="tab-link">Nov 10 06:30 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Nov 06</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">121.23</td><td align="right">10,000</td><td align="right">1,212,300</td><td align="right">1,049,598</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919115078971/xslF345X03/doc4.xml" class="tab-link">Nov 06 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Nov 05</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">121.94</td><td align="right">10,000</td><td align="right">1,219,400</td><td align="right">1,059,598</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919115078971/xslF345X03/doc4.xml" class="tab-link">Nov 06 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Nov 04</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">123.07</td><td align="right">10,000</td><td align="right">1,230,700</td><td align="right">1,069,598</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919115078971/xslF345X03/doc4.xml" class="tab-link">Nov 06 06:31 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Nov 03</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">120.73</td><td align="right">10,000</td><td align="right">1,207,300</td><td align="right">1,079,598</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919115078195/xslF345X03/doc4.xml" class="tab-link">Nov 03 06:47 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1557203&tc=7" class="tab-link">Riccio Daniel J.</td><td style="white-space:nowrap">Senior Vice President</td><td>Nov 02</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">120.81</td><td align="right">13,588</td><td align="right">1,641,626</td><td align="right">40,755</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919115078197/xslF345X03/doc4.xml" class="tab-link">Nov 03 06:48 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Nov 02</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">120.00</td><td align="right">10,000</td><td align="right">1,200,000</td><td align="right">1,089,598</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919115078195/xslF345X03/doc4.xml" class="tab-link">Nov 03 06:47 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1214156&tc=7" class="tab-link">COOK TIMOTHY D</td><td style="white-space:nowrap">Chief Executive Officer</td><td>Oct 30</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">120.51</td><td align="right">70,593</td><td align="right">8,507,325</td><td align="right">1,099,598</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919115078195/xslF345X03/doc4.xml" class="tab-link">Nov 03 06:47 PM</a></td></tr><tr class="insider-sale-row-2" onmouseover="this.className='insider-light-row-h'" onmouseout="this.className='insider-sale-row-2'" valign="top"><td><a href="insidertrading.ashx?oc=1528884&tc=7" class="tab-link">Cue Eduardo H</td><td style="white-space:nowrap">Senior Vice President</td><td>Oct 30</td><td style="white-space:nowrap" align="center">Sale</td><td align="right">120.11</td><td align="right">200,000</td><td align="right">24,022,820</td><td align="right">46,177</td><td style="white-space:nowrap" align="center"><a href="http://www.sec.gov/Archives/edgar/data/320193/000120919115078196/xslF345X03/doc4.xml" class="tab-link">Nov 03 06:47 PM</a></td></tr></table>
+</td>
+</tr>
+<tr><td width="100%"><img src="gfx/nic2x2.gif" width="2" height="10" alt="" border="0"></td></tr>
+<tr valign="bottom"><td align="center">
+<table  cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td class="fullview-links" align="left" valign="center">
+<a target="_blank" class="tab-link" href="http://finance.yahoo.com/q?s=AAPL">open in yahoo</a> | <a target="_blank" class="tab-link" href="http://stocks.us.reuters.com/stocks/overview.asp?symbol=AAPL">open in reuters</a> | <a target="_blank" class="tab-link" href="http://finance.google.com/finance?q=NASDAQ:AAPL">open in google</a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr><td width="100%"><img src="gfx/nic2x2.gif" width="2" height="10" alt="" border="0"></td></tr>
+</table>
+</td>
+</tr>
+</table>
+
+            <script type="text/javascript" src="/js/libs/react-with-addons.min.js"></script>
+            <script type="text/javascript" src="/js/dist/header.bundle.js?rev=16"></script>
+        <script type="text/javascript">SearchFocus();</script>
+            <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-3261808-1', 'auto');
+                ga('set', 'dimension1', 'NotLoggedIn');
+                
+                ga('send', 'pageview');
+            </script>
+        <script type="text/javascript">
+_qoptions={qacct:"p-c2W8esUZ6Q8oA"};
+</script>
+<script type="text/javascript" src="https://secure.quantserve.com/quant.js"></script>
+<noscript>
+<img src="http://pixel.quantserve.com/pixel/p-c2W8esUZ6Q8oA.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+</noscript>
+
+            <script type="text/javascript">
+                (function() {
+                    var bannerScript = document.createElement('script');
+
+                    if (document.body.clientWidth >= 1260) {
+                        bannerScript.onload = function () {
+                            var microbarScript = document.createElement('script');
+                            microbarScript.src = '//ads.investingchannel.com/adtags/finviz/qtsearch/88x31.js?kval=qtsearch';
+                            var microbar = document.getElementById('microbar_position');
+                            microbar.appendChild(microbarScript);
+                            microbar.style.marginLeft = '6px';
+                        };
+                    }
+            bannerScript.onerror = function() {
+                var banners = ['2', '3', '4'];
+                var banner = banners[Math.floor(Math.random() * banners.length)];
+
+                if (typeof intICJsTile === 'undefined') {
+                    if (banner === '3') {
+                        document.getElementById('banner_position').innerHTML = '<iframe src="/img/a/' + banner + '/index.html?rev=2" frameBorder="0" width="728" height="90"></iframe>';
+                    } else {
+                        document.getElementById('banner_position').innerHTML = '<a href="/elite.ashx?utm_source=finviz&utm_medium=banner&utm_campaign=' + banner + '"><img src="/img/a/' + banner + '.jpg"></a>';
+                    }
+                    ga && ga('send', 'event', 'banner', 'impression', banner, {'nonInteraction': 1});
+                }
+            };
+        
+                    bannerScript.src = '//ads.investingchannel.com/adtags/finviz/quotes/728x90.js?t=aapl';
+                            
+                    var banner = document.getElementById('banner_position');
+                    banner.appendChild(bannerScript);
+                })();
+            </script>
+        <script src="//cdn.investingchannel.com/ic_beacon.js" type="text/javascript"></script>
+<script type="text/javascript">icBeacon('finviz');</script>
+<script src="/script/libs/bowser.min.js?rev=3" type="text/javascript"></script></body>
+</html>
