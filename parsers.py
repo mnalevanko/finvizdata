@@ -1,3 +1,6 @@
+from html.parser import HTMLParser
+
+
 class FinvizKeyStatsParser(HTMLParser):
 
     def __init__(self):
@@ -15,10 +18,85 @@ class FinvizKeyStatsParser(HTMLParser):
                            'RSI (14)', 'Volatility', 'Optionable', 'Debt/Eq', 'EPS Q/Q', 'Profit Margin', 'Rel Volume',
                            'Prev Close', 'Shortable', 'LT Debt/Eq', 'Earnings', 'Payout', 'Avg Volume', 'Price',
                            'Recom', 'SMA20', 'SMA50', 'SMA200', 'Volume', 'Change']
+        self.key_names = {
+            "P/E": "PE:1D",
+            "EPS (ttm)": "EPS:Q_SUM:TTM",
+            "Insider Own": "INSIDER_OWN",
+            "Shs Outstand": "SHARES_OUT",
+            "Perf Week": "PRICE:1D__CHANGE:1W",
+            "Market Cap": "MARKET_CAP",
+            "Forward P/E": "PE:1D_FW",
+            "EPS next Y": "EPS:Y__ESTIMATE:1Y__AVERAGE:ALL",
+            "Insider Trans": "INSIDER_TRS",
+            "Shs Float": "SHARES_FLOAT:1Q",
+            "Perf Month": "PRICE:1D__CHANGE:1Y",
+            "Income": "NET_INCOME:1Y",
+            "PEG": "PEG:1D",
+            "EPS next Q": "EPS:Q__ESTIMATE:1Q__AVERAGE:ALL",
+            "Inst Own": "INST_OWN:1Q",
+            "Short Float": "SHORT_FLOAT:1Q",
+            "Perf Quarter": "PRICE:1D__CHANGE:1Q",
+            "Sales": "REVENUE:1Y",
+            "P/S": "PS:1D",
+            "EPS this Y": "EPS:1Y__ESTIMATE:1Y",
+            "Inst Trans": "INST_TRS:1Q",
+            "Short Ratio": "SHORT_RATIO:1Q",
+            "Perf Half Y": "PRICE:1D__CHANGE:2Q",
+            "Book/sh": "BOOK_PER_SHS:1Q",
+            "P/B": "PB:1D",
+            "EPS next Y": "EPS:1Y__ESTIMATE:2Y__AVERAGE:ALL",
+            "ROA": "ROA:1Y",
+            "Target Price": "PRICE:1D__ESTIMATE:1Y__AVERAGE:ALL",
+            "Perf Year": "PRICE:1D__CHANGE:1Y",
+            "Cash/sh": "CASH_PER_SHARE:1Q",
+            "P/C": "PRICE_TO_CASH:1D",
+            "EPS next 5Y": "EPS:1Y_ESTIMATE:5Y__CHANGE_A:5Y",
+            "ROE": "ROE:1Y",
+            "52W Range": "PRICE:1D__RANGE:1Y",
+            "Perf YTD": "PRICE:1D__CHANGE:YTD",
+            "Dividend": "DIVIDEND:1Y",
+            "P/FCF": "PRICE_TO_FCF:1D",
+            "EPS past 5Y": "EPS:1Y__CHANGE_A:5Y",
+            "ROI": "ROI:1Y",
+            "52W High": "PRICE:1D__HIGHEST_IN:1Y",
+            "Beta": "BETA:1D",
+            "Dividend": "DIVIDEND_YIELD:1D",
+            "Quick Ratio": "QUICK_RATIO:1Q",
+            "Sales past 5Y": "REVENUE:1Y__CHANGE_A:5Y",
+            "Gross Margin": "GROSS_MARGIN:1Y",
+            "52W Low": "PRICE:1D__LOWEST_IN:1Y",
+            "ATR": "ATR",
+            "Employees": "EMPLOYEES:1Q",
+            "Current Ratio": "CURRENT_RATIO:1Q",
+            "Sales Q/Q": "REVENUE:1Q__CHANGE:1Q",
+            "Oper. Margin": "OPERATING_MARGIN:1Y",
+            "RSI (14)": "RSI_14:1D",
+            "Volatility": "VOLATILITY:1D",
+            "Optionable": "OPTIONABLE:1Q",
+            "Debt/Eq": "DEBT_TO_EQUITY:1Q",
+            "EPS Q/Q": "EPS:1Q__CHANGE:1Q",
+            "Profit Margin": "PROFIT_MARGIN:1Y"
+            "Rel Volume": "REL_VOLUME:1D",
+            "Prev Close": "PRICE:1D__PREV",
+            "Shortable": "SHORTABLE",
+            "LT Debt/Eq": "LT_DEBT_TO_EQUITY:1Q",
+            "Earnings": "EARNINGS_DATE",
+            "Payout": "PAYOUT:1Q",
+            "Avg Volume": "VOLUME:1D__AVERAGE:ALL",
+            "Price": "PRICE:1D",
+            "Recom": "RECOMMENDATION_RANK:1D",
+            "SMA20": "SMA_20:1D",
+            "SMA50": "SMA_50:1D",
+            "SMA200": "SMA_200:1D",
+            "Volume": "VOLUME:1D",
+            "Change": "PRICE:1D__CHANGE:1D"
+        }
 
     def handle_data(self, data):
         if data in self.indicators:
-            self.last_indicator = data
+            # Get custom key name istead of original.
+            org_index = self.indicators.index(data)
+            self.last_indicator = self.key_names[org_index]
             # We just set title of indicator, so value will be in next data
             # point. So we need to return after we set last_indicator
             return
